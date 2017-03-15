@@ -18,3 +18,20 @@ export const Company = styled.div`
   font-size: 20px;
   margin: 10px;
 `
+export const NewButton = styled.a`
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  padding: 8px 16px;
+  border: solid 1px #333;
+`
+export const TextInput = styled.input`
+  font-size: 30px;
+  border: solid 1px #333;
+  margin-bottom: 12px;
+`
+export const AddButton = styled.button`
+  font-size: 24px;
+  padding: 8px 16px;
+  border: solid 1px #333;
+`
