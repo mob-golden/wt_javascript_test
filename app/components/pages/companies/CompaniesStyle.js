@@ -35,3 +35,7 @@ export const AddButton = styled.button`
   padding: 8px 16px;
   border: solid 1px #333;
 `
+export const ErrorText = styled.p`
+  font-size: 16px;
+  color: red;
+`
