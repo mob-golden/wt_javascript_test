@@ -2,7 +2,7 @@
 import React from 'react'
 import { browserHistory } from 'react-router'
 import { addCompany } from '~/app/api/Company'
-import { TextField, RaisedButton, AppBar, IconButton } from 'material-ui'
+import { TextField, RaisedButton, AppBar, IconButton, Paper } from 'material-ui'
 import NavigationArrowBack from 'material-ui/svg-icons/navigation/arrow-back'
 import { Container } from './CompaniesStyle'
 
@@ -35,19 +35,22 @@ const NewCompany = React.createClass({
 
   render() {
     return <Container>
-      <AppBar
-        title='New Company'
-        iconElementLeft={<IconButton href='/companies'><NavigationArrowBack /></IconButton>} />
-      <TextField
-        defaultValue=''
-        floatingLabelText='Company Name'
-        errorText={this.state.error}
-        onChange={this.handleInputChange}
-        fullWidth={true} /><br />
-      <RaisedButton
-        label='Add'
-        secondary={true}
-        onClick={this.handleAdd} />
+      <Paper zDepth={2}>
+        <AppBar
+          title='New Company'
+          iconElementLeft={<IconButton href='/companies'><NavigationArrowBack /></IconButton>} />
+        <TextField
+          defaultValue=''
+          floatingLabelText='Company Name'
+          errorText={this.state.error}
+          onChange={this.handleInputChange}
+          fullWidth={true} /><br />
+        <RaisedButton
+          fullWidth={true}
+          label='Add'
+          secondary={true}
+          onClick={this.handleAdd} />
+      </Paper>
     </Container>
   }
 })
