@@ -1,6 +1,9 @@
 //@flow
 import React, { PropTypes as pt } from 'react'
-import { Container, Header, Company, NewButton } from './CompaniesStyle'
+import { RaisedButton, AppBar } from 'material-ui'
+import {List, ListItem} from 'material-ui/List'
+import ActionGrade from 'material-ui/svg-icons/action/grade'
+import { Container } from './CompaniesStyle'
 
 const Companies = React.createClass({
   propTypes: {
@@ -16,11 +19,16 @@ const Companies = React.createClass({
     const { companies } = this.props
 
     return <Container>
-      <Header>Companies</Header>
-      {companies.map(c =>
-        <Company key={c.id}>{c.name}</Company>
-      )}
-      <NewButton href='/companies/new'>Add Company</NewButton>
+      <AppBar title='Companies' />
+      <List>
+        {
+          companies.map(c => <ListItem key={c.id} primaryText={c.name} leftIcon={<ActionGrade />} />)
+        }
+      </List>
+      <RaisedButton
+        label='Add Company'
+        secondary={true}
+        href='/companies/new' />
     </Container>
   }
 })
